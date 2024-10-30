@@ -2,7 +2,7 @@ package Lab5;
 
 public class Shop {
     
-    MyQueue queue;
+    MyQueue<Customer> queue;
     int totalProfit;
 
     Shop(){
@@ -10,10 +10,16 @@ public class Shop {
         totalProfit = 0;
     }
 
-    public void arrival(){
-        
+    public void arrival(Customer customer){
+        queue.EnQueue(customer);
     }
 
+    public void process(){
+        if(!queue.isEmpty()){
+        totalProfit = this.queue.peek().cartValue;
+        this.queue.DeQueue();
+        }
+    }
 
 
 }

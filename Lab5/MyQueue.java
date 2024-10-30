@@ -1,5 +1,4 @@
 package Lab5;
-import Lab3.MyDoubleLinkList;
 
 public class MyQueue<T> extends MyDoubleLinkList<T> {
     
@@ -11,10 +10,7 @@ public class MyQueue<T> extends MyDoubleLinkList<T> {
         return this.removeEnd();
     }
 
-    public T peek() throws Exception{
-        if(this.getSize() == 0){
-            throw new Exception("You are pointing at null");
-        }
+    public T peek(){
         return this.tail.held;
     }
 
